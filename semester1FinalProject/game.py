@@ -2,6 +2,7 @@
 import pygame
 from player import Player
 from path import Path
+import sys
 
 # Initialize Pygame
 pygame.init()
@@ -9,7 +10,6 @@ pygame.init()
 # Constants
 WIDTH, HEIGHT = 800, 600
 PLAYER_SIZE = 50
-PATH_SPEED = 8  # Make the path scrolling faster
 
 # Colors
 WHITE = (255, 255, 255)
@@ -50,8 +50,7 @@ while not game_over:
     path.scroll(player.state)  # Pass player's state to the scroll method
 
     # Check game over condition
-    if player.food < 0:
-        game_over = True
+    game_over = player.check_game_over()
 
     # Draw everything
     screen.fill(WHITE)
