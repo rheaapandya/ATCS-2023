@@ -7,7 +7,7 @@ class Path:
         self.y = height  # Start the path at the bottom of the screen
 
     def scroll(self, player_state):
-        if player_state == "hike":
+        if player_state == "h":
             self.y -= 10
         if self.y < 0:
             self.y = self.height  # Reset the path when it reaches the top

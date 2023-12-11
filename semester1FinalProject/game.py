@@ -42,15 +42,15 @@ while not game_over:
     keys = pygame.key.get_pressed()
     player.update(keys)
 
-    if player.state == "hike":
-        player.hike()
-    elif player.state == "rest":
-        player.rest()
-
-    path.scroll(player.state)  # Pass player's state to the scroll method
+    # if player.state == "hike":
+    #     player.hike()
+    # elif player.state == "rest":
+    #     player.rest()
+    
+    path.scroll(player.get_state())  # Pass player's state to the scroll method
 
     # Check game over condition
-    game_over = player.check_game_over()
+    game_over = player.turn_game_over()
 
     # Draw everything
     screen.fill(WHITE)
