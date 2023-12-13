@@ -69,7 +69,7 @@ class Player:
         # Update food every 2 seconds
         
         current_time = time.time()
-        if current_time - self.last_food_update_time >= 3:
+        if current_time - self.last_food_update_time >= 4:
             if self.get_state() == "fr":
                 self.food = min(self.food + 1, 4)  # Recharge by 1 every 2 seconds while resting, up to 4
             elif self.get_state() == "h":
