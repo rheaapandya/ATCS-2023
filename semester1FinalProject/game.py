@@ -59,7 +59,9 @@ while not game_over:
 
     # Display food value at the top left of the screen
     food_text = font.render(f"Food: {player.food}", True, RED)
+    water_text = font.render(f"Water: {player.water}", True, RED)
     screen.blit(food_text, (10, 10))
+    screen.blit(water_text, (10, 50))
 
     # Update display
     pygame.display.flip()
